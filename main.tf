@@ -23,10 +23,11 @@ resource "docker_network" "monitoring" {
 # Container web atualizado
 resource "docker_container" "web" {
   name  = "meu-container-web"
-image = docker_image.nginx.image_id
+  image = docker_image.nginx.image_id
 
   ports {
-    internal = 80 external = 8080
+    internal = 80
+    external = 8080
   }
 
   # Mantém os arquivos do site
