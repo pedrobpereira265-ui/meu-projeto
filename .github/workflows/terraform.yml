@@ -33,7 +33,7 @@ jobs:
         run: terraform apply -auto-approve
 
       - name: Smoke test (verificação pós-deploy)
-            if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+          if: github.ref == 'refs/heads/main' && github.event_name == 'push'
             run: |
               sleep 5
               docker ps
